@@ -14,9 +14,18 @@ namespace eszkozok
 
         //properties
         public string Cikkszam { get; set; }
-        public string Nev {  get; set; }
+        public string Nev { get; set; }
         public int BeszerzesiAr { get; set { if (beszerzesiAr == 0 || beszerzesiAr < 0) { value = 0; } } }
         public int RaktarKeszlet { get; set { if (raktarKeszlet == 0 || raktarKeszlet > 0) { value = 0; } } }
         public readonly int OsszesLetezoEszkoz = osszesLezetoEszkoz;
+
+        //konstruktorok
+        public Eszkoz(string cikkszam; string nev; string beszerzesiAr)
+            {
+                this.cikkszam = Cikkszam;
+                this.nev = Nev;
+                this.beszerzesiAr = BeszerzesiAr;
+                osszesLetezoEszkoz++;
+            };
     }
 }

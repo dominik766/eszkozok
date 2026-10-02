@@ -25,7 +25,7 @@ namespace eszkozok
             get => raktarKeszlet;
             set => raktarKeszlet = value > 0 ? value : 0;
         }
-        static int OsszesLetezoEszkoz { get { return osszesLezetoEszkoz; } }
+        public static int OsszesLetezoEszkoz { get { return osszesLezetoEszkoz; } }
 
         //konstruktorok
         //1

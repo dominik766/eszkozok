@@ -36,7 +36,8 @@ namespace eszkozok
             BeszerzesiAr = beszerzesiAr;
             raktarKeszlet = 0;
         }
-        //2 - konstruktorlancolas, h ne kelljen 2x ugyanazt leirni (this)
+        //2
+        //konstruktorlancolas, h ne kelljen 2x ugyanazt leirni (this)
         public Eszkoz(string cikkszam, string nev, int beszerzesiAr, int raktarKeszlet) : this(cikkszam, nev, beszerzesiAr)
         {
             RaktarKeszlet = raktarKeszlet;
@@ -46,6 +47,20 @@ namespace eszkozok
         public override string ToString()
         {
             return $"[{Cikkszam}] {Nev} | Beszerzési ár: {BeszerzesiAr} Ft | Készlet: {RaktarKeszlet} db";
+        }
+        //eladas fuggveny
+        public bool Eladas(int db)
+        {
+            if (RaktarKeszlet >= db)
+            {
+                RaktarKeszlet -= db;
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Nincs elég a készleten!");
+                return false;
+            }
         }
     }
 }
